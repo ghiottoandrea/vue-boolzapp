@@ -330,6 +330,10 @@ img {
     color: gray;
 }
 
+.write{
+    width: 100%;
+    border: none;}
+    
 /* #endregion .writhe-text */
 
 /* #endregion .right_section */

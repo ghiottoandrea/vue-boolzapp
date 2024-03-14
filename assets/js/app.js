@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             contactPosition: 0,
+            newMessage: ``,
             contacts: [
                 {
                     name: 'Michele',
@@ -170,9 +171,31 @@ createApp({
         }
     },
     methods: {
-        showChat(index){
+        showChat(index) {
             this.contactPosition = index
             console.log(this.contactPosition);
+        },
+        addNewMessage() {
+            const currentTime = new Date()
+            const newElement = {
+                date: `10/01/2020 ${currentTime.getHours()}:${currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()}`,
+                message: this.newMessage,
+                status: 'sent'
+            };
+            this.contacts[this.contactPosition].messages.push(newElement)
+            this.newMessage = ``
+            setTimeout(() => {
+                this.backMessage();
+              }, 2000);
+        },
+        backMessage(){
+            const currentTime = new Date()
+            const newElement = {
+                date: `10/01/2020 ${currentTime.getHours()}:${currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()}`,
+                message: `Ok`,
+                status: 'received'
+            };
+            this.contacts[this.contactPosition].messages.push(newElement)
         }
     }
 }).mount(`#app`)

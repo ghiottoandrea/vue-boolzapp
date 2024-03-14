@@ -140,7 +140,7 @@
                 <!-- /.emoji -->
 
                 <div class="write-box">
-                    <span>Scrivi un messaggio</span>
+                    <input class="write" type="text" placeholder="Scrivi qui il tuo mesaggio" v-model="newMessage" @keyup.enter="addNewMessage()">
                 </div>
                 <!-- /.search-box -->
 
