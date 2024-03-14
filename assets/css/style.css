@@ -1,0 +1,328 @@
+/* #region debug */
+.debug body {
+    background-color: var(--boolzap-back-secondary);
+}
+
+.debug header {
+    background-color: var(--boolzap-back-primary);
+    height: 100px;
+}
+
+/* .left_section{
+    height: 200px;
+    background-color: red;
+}
+.right_section{
+    background-color: blueviolet;
+    height: 200px;
+} */
+.debug .profile {
+    background-color: red;
+    height: 50px;
+}
+
+.debug .notification {
+    background-color: var(--boolzap-notification);
+    height: 100px;
+}
+
+.debug .search {
+    background-color: blueviolet;
+    height: 50px;
+}
+
+.debug .contacts {
+    background-color: chartreuse;
+    height: 500px;
+}
+
+.debug .sender {
+    background-color: greenyellow;
+    height: 50px;
+}
+
+.debug .chat-board {
+    background-color: yellow;
+    height: 600px;
+}
+
+.debug .card {
+    height: 150px;
+    background-color: grey;
+    width: 400px;
+    margin: 1rem 0;
+}
+
+.debug .writhe-text {
+    background-color: var(--boolzap-light-bottom);
+    height: 50px;
+}
+
+.debug .chat-sender {
+    background-color: blue;
+}
+
+/* #endregion debug */
+
+/* #region utilities */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --boolzap-back-primary: rgba(0, 150, 136, 1);
+    --boolzap-back-secondary: rgba(215, 219, 214, 1);
+    --boolzap-notification: rgba(142, 218, 252, 1);
+    --boolzap-chat: rgba(213, 249, 186, 1);
+    --boolzap-light-top: rgba(234, 234, 234, 1);
+    --boolzap-light-bottom: rgba(243, 238, 234, 1);
+    --boolzap-lighter: rgba(255, 255, 255, 1);
+    --boolzap-icon: rgb(184, 182, 182);
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgb(0, 181, 147) 0%, rgb(0, 181, 147) 120px, lightgray 120px, lightgray 100%);
+    overflow: hidden;
+}
+
+#app {
+    height: 95vh;
+    margin: 1rem auto 2rem;
+    max-width: 1200px;
+    display: flex;
+}
+
+.chat-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.icons {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.3rem;
+    color: var(--boolzap-icon);
+    font-size: 25px;
+}
+
+
+
+img {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+/* #endregion utilities */
+
+
+
+/* #region .left_section*/
+
+.left_section {
+    width: calc((100%/12)*4);
+}
+
+/* #region profile */
+.profile,
+.sender {
+    background-color: var(--boolzap-light-top);
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 0 1rem;
+}
+
+.profile-img {
+    width: 20%;
+}
+
+/* #endregion profile */
+
+/* #region notification */
+.notification {
+    height: 10vh;
+    background-color: var(--boolzap-notification);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    width: 20%;
+    text-align: center;
+}
+
+.notification-icon i {
+    color: var(--boolzap-notification);
+    background-color: var(--boolzap-lighter);
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.notification-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.notification-text a {
+    color: rgb(139, 136, 136);
+}
+
+/* #endregion notification */
+
+/* #region search */
+.search {
+    background-color: var(--boolzap-light-top);
+    padding: 0.5rem;
+    height: 6vh;
+}
+
+.search-box {
+    display: flex;
+    background-color: var(--boolzap-lighter);
+    padding: 0.5rem 1rem;
+}
+
+.search-icon {
+    width: 15%;
+    color: var(--boolzap-icon);
+}
+
+.search-text {
+    color: rgb(139, 136, 136);
+}
+
+/* #endregion search */
+
+/* #region contacts */
+.contacts {
+    height: calc(100vh - 26vh - 5vh);
+    background-color: var(--boolzap-lighter);
+    overflow-y: scroll;
+}
+
+.contacts-box {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    height: 90px;
+}
+
+.name {
+    width: 60%;
+    padding-left: 1rem;
+}
+
+.name strong {
+    font-size: 20px;
+}
+
+.name span {
+    font-size: 13px;
+    color: lightgray;
+}
+
+.time {
+    width: 20%;
+    text-align: end;
+    font-size: 13px;
+    color: lightgray;
+}
+
+/* #endregion contacts */
+
+/* #endregion .left_section*/
+
+
+/* #region .right_section */
+.right_section {
+    width: calc((100%/12)*8);
+}
+
+/* #region sender */
+.sender {
+    border-left: 1px solid lightgray;
+}
+
+.sender-img {
+    width: 10%;
+}
+
+#access,
+.chat-icon {
+    color: rgb(139, 136, 136);
+}
+
+/* #endregion sender */
+
+/* #region .chat-board */
+.chat-board {
+    height: calc(100vh - 23vh);
+    background-image: url(../img/back.jpg);
+    padding: 3rem 0;
+    overflow-y: scroll;
+}
+
+.chat-sender {
+    background-color: var(--boolzap-chat);
+    align-self: flex-end;
+}
+
+.chat-recipient {
+    background-color: var(--boolzap-lighter);
+}
+
+/* #endregion .chat-board */
+
+/* #region .writhe-text */
+.writhe-text {
+    height: 8vh;
+    background-color: var(--boolzap-light-bottom);
+    display: flex;
+    align-items: center;
+}
+
+.emoji,
+.vocal {
+    width: 10%;
+    text-align: center;
+    font-size: 25px;
+    color: grey;
+}
+
+.write-box {
+    width: 80%;
+    background-color: var(--boolzap-lighter);
+    padding: 1rem;
+    color: gray;
+}
+
+/* #endregion .writhe-text */
+
+/* #endregion .right_section */
+
+
+/* #region query */
