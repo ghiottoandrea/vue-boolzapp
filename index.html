@@ -93,11 +93,11 @@
 
             <div class="sender">
                 <div class="sender-img">
-                    <img src="./assets/img/avatar_1.jpg" alt="">
+                    <img :src="contacts[contactPosition].avatar" alt="">
                 </div>
                 <!-- /.profile-img -->
                 <div class="name">
-                    <div><strong>Michele</strong></div>
+                    <div><strong>{{contacts[contactPosition].name}}</strong></div>
                     <div><span id="access">Ultimo accesso oggi alle 16:26</span></div>
                 </div>
                 <!-- /.name -->
@@ -110,70 +110,22 @@
             </div>
             <!-- /.sender -->
 
+            <div class="chat-board">
+                <div class="chat-container" v-for="message in contacts[contactPosition].messages" :key="message.date" >
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            <div class="chat-board" v-for="contact in contacts">
-                <div class="chat-container" v-for="message in contact.messages">
-
-                    <div class="card chat-sender">
+                    <div v-if="message.status === `sent`"   class="card chat-sender" >
                         <div class="chat-text">{{message.message}}</div>
                         <!-- /.chat-text -->
-                        <div class="chat-icon">
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <!-- /.chat-icon -->
+                        <div class="chat-time">{{message.date.split(" ")[1].split(":")[0]}}:{{message.date.split(" ")[1].split(":")[1]}}</div>
+                        <!-- /.chat-time -->
                     </div>
                     <!-- /.card-chat-sender -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="card chat-recipient">
-                        <div class="chat-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error accusantium debitis, cumque
-                            adipisci nesciunt sint! Iusto quo autem distinctio excepturi, vero alias nemo, consequuntur
-                            nihil aliquid explicabo dolorum commodi ipsum!
-                        </div>
+                    <div v-if="message.status === `received`" class="card chat-recipient">
+                        <div class="chat-text">{{message.message}}</div>
                         <!-- /.chat-text -->
-                        <div class="chat-icon">
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <!-- /.chat-icon -->
+                        <div class="chat-time">{{message.date.split(" ")[1].split(":")[0]}}:{{message.date.split(" ")[1].split(":")[1]}}</div>
+                        <!-- /.chat-time -->
                     </div>
                     <!-- /.card-chat-recipient -->
 

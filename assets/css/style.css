@@ -101,7 +101,7 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .icons {
@@ -128,7 +128,8 @@ img {
     display: flex;
     padding: 1rem 1.5rem;
     border-radius: 20px;
-    max-width: 400px;
+    max-width: 40%;
+    justify-content: space-between;
 }
 
 /* #endregion utilities */
@@ -271,8 +272,7 @@ img {
     width: 10%;
 }
 
-#access,
-.chat-icon {
+#access{
     color: rgb(139, 136, 136);
 }
 
@@ -289,12 +289,22 @@ img {
 .chat-sender {
     background-color: var(--boolzap-chat);
     align-self: flex-end;
+    margin-bottom: 1rem;
 }
 
 .chat-recipient {
     background-color: var(--boolzap-lighter);
+    margin-bottom: 1rem;
+
 }
 
+.chat-time{
+    color: rgb(139, 136, 136);
+    font-size: 11px;
+    align-self:end;
+    margin-top: 0.9rem;
+    margin-left: 1rem;
+}
 /* #endregion .chat-board */
 
 /* #region .writhe-text */

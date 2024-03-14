@@ -33,19 +33,3 @@ Milestone 5 - opzionale
 permette di cancellare il messaggio selezionato
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatt
 
-
-
-
-
-
-
-
-
-
-<img :src="slides[activeObject].image" alt=""/>
-                    <div class="text">
-                        <h3>{{slides[activeObject].title}}</h3>
-                        <p>{{slides[activeObject].text}}</p>
-                    </div>
-
-                    contacts[contactPosition].messages[]
