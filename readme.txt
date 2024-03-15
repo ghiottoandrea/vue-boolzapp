@@ -25,6 +25,10 @@ Milestone 4
 contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo
 “mar” rimangono solo Marco e Martina)
 
+Il v-model prende l'input e lo salva, per esempio Mar, io devo farlo ciclare all'inerno di contacts[] per verificare se il nome corrisponde
+
+
+
 ---------------------------Obbiettivo Mattina Venerdi-------------------------------
 
 

@@ -57,7 +57,7 @@
                     </div>
                     <!-- /.search-icon -->
                     <div class="search-text">
-                        Cerca o inizia una nuova chat
+                        <input class="write" type="text" placeholder="Cerca una nuova chat" v-model="searchContact" @keydown="searchName()">
                     </div>
                     <!-- /.search-text -->
                 </div>
@@ -66,7 +66,9 @@
 
             <div class="contacts">
 
-                <div class="contacts-box" v-for="(contact, index) in contacts" @click="showChat(index)">
+                <div  class="contacts-box" v-for="(contact, index) in contacts" @click="showChat(index)" v-if="contact.visible">
+                    <!-- Contenuto della lista dei contatti -->
+                 >
                     <div class="profile-img">
                         <img :src="contact.avatar" alt="">
                     </div>

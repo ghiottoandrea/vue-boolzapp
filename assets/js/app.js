@@ -5,6 +5,7 @@ createApp({
         return {
             contactPosition: 0,
             newMessage: ``,
+            searchContact: ``,
             contacts: [
                 {
                     name: 'Michele',
@@ -178,7 +179,7 @@ createApp({
         addNewMessage() {
             const currentTime = new Date()
             const newElement = {
-                date: `10/01/2020 ${currentTime.getHours()}:${currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()}`,
+                date: `11/01/2020 ${currentTime.getHours()}:${currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()}`,
                 message: this.newMessage,
                 status: 'sent'
             };
@@ -186,16 +187,29 @@ createApp({
             this.newMessage = ``
             setTimeout(() => {
                 this.backMessage();
-              }, 2000);
+              }, 1000);
         },
         backMessage(){
             const currentTime = new Date()
             const newElement = {
-                date: `10/01/2020 ${currentTime.getHours()}:${currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()}`,
+                date: `11/01/2020 ${currentTime.getHours()}:${currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()}`,
                 message: `Ok`,
                 status: 'received'
             };
             this.contacts[this.contactPosition].messages.push(newElement)
+        },
+        searchName() {
+            this.searchContact = this.searchContact.toLowerCase(); // Nome da cercare
+        
+            this.contacts.forEach(contact => {
+                const userName = contact.name.toLowerCase(); // Ottieni il nome dell'utente corrente
+                if (userName.includes(this.searchContact)) {
+                    contact.visible = true; // Imposta visibile a true se il nome corrisponde
+                } else {
+                    contact.visible = false; // Altrimenti, imposta visibile a false
+                }
+            });
         }
+        
     }
 }).mount(`#app`)
