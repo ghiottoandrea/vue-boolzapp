@@ -65,8 +65,8 @@
             <!-- /.search -->
 
             <div class="contacts">
-                <div v-for="(contact, index) in contacts">
-                    <div  class="contacts-box"  @click="showChat(index)" v-if="contact.visible">
+                <div v-for="(contact, index) in contacts" >
+                    <div  class="contacts-box" @click="showChat(index)" v-if="contact.visible">
                         <!-- Contenuto della lista dei contatti -->
                     
                             <div class="profile-img">
@@ -75,11 +75,11 @@
                             <!-- /.profile-img -->
                             <div class="name">
                                 <div><strong>{{contact.name}}</strong></div>
-                                <div><span>Lorem ipsum dolor sit amet</span></div>
+                                <div><span>{{contact.messages[contact.messages.length-1].message}}</span></div>
                             </div>
                             <!-- /.name -->
                             <div class="time">
-                                <span>16:15</span>
+                                <span>{{contact.messages[contact.messages.length-1].date.split(" ")[1].split(":")[0]}}:{{contact.messages[contact.messages.length-1].date.split(" ")[1].split(":")[1]}}</span>
                             </div>
                             <!-- /.time -->
                         </div>
