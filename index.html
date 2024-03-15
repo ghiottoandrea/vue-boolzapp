@@ -57,7 +57,7 @@
                     </div>
                     <!-- /.search-icon -->
                     <div class="search-text">
-                        <input class="write" type="text" placeholder="Cerca una nuova chat" v-model="searchContact" @keydown="searchName()">
+                        <input class="write" type="text" placeholder="Cerca una nuova chat" v-model="searchContact" @keyup="searchName()">
                     </div>
                     <!-- /.search-text -->
                 </div>
@@ -65,26 +65,26 @@
             <!-- /.search -->
 
             <div class="contacts">
-
-                <div  class="contacts-box" v-for="(contact, index) in contacts" @click="showChat(index)" v-if="contact.visible">
-                    <!-- Contenuto della lista dei contatti -->
-                 >
-                    <div class="profile-img">
-                        <img :src="contact.avatar" alt="">
-                    </div>
-                    <!-- /.profile-img -->
-                    <div class="name">
-                        <div><strong>{{contact.name}}</strong></div>
-                        <div><span>Lorem ipsum dolor sit amet</span></div>
-                    </div>
-                    <!-- /.name -->
-                    <div class="time">
-                        <span>16:15</span>
-                    </div>
-                    <!-- /.time -->
+                <div v-for="(contact, index) in contacts">
+                    <div  class="contacts-box"  @click="showChat(index)" v-if="contact.visible">
+                        <!-- Contenuto della lista dei contatti -->
+                    
+                            <div class="profile-img">
+                                <img :src="contact.avatar" alt="">
+                            </div>
+                            <!-- /.profile-img -->
+                            <div class="name">
+                                <div><strong>{{contact.name}}</strong></div>
+                                <div><span>Lorem ipsum dolor sit amet</span></div>
+                            </div>
+                            <!-- /.name -->
+                            <div class="time">
+                                <span>16:15</span>
+                            </div>
+                            <!-- /.time -->
+                        </div>
+                        <!-- /contacts-box -->
                 </div>
-                <!-- /contacts-box -->
-
             </div>
             <!-- /.contacts -->
 
@@ -118,16 +118,32 @@
                     <div v-if="message.status === `sent`"   class="card chat-sender" >
                         <div class="chat-text">{{message.message}}</div>
                         <!-- /.chat-text -->
-                        <div class="chat-time">{{message.date.split(" ")[1].split(":")[0]}}:{{message.date.split(" ")[1].split(":")[1]}}</div>
-                        <!-- /.chat-time -->
+                        <div class="chat-information">
+                            <div class="chat-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <!-- /.chat-icon -->
+                            <div class="chat-time">
+                                {{message.date.split(" ")[1].split(":")[0]}}:{{message.date.split(" ")[1].split(":")[1]}}
+                            </div>
+                            <!-- /.chat-time -->
+                        </div>
                     </div>
                     <!-- /.card-chat-sender -->
 
                     <div v-if="message.status === `received`" class="card chat-recipient">
                         <div class="chat-text">{{message.message}}</div>
                         <!-- /.chat-text -->
-                        <div class="chat-time">{{message.date.split(" ")[1].split(":")[0]}}:{{message.date.split(" ")[1].split(":")[1]}}</div>
-                        <!-- /.chat-time -->
+                        <div class="chat-information">
+                            <div class="chat-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <!-- /.chat-icon -->
+                            <div class="chat-time">
+                                {{message.date.split(" ")[1].split(":")[0]}}:{{message.date.split(" ")[1].split(":")[1]}}
+                            </div>
+                            <!-- /.chat-time -->
+                        </div>
                     </div>
                     <!-- /.card-chat-recipient -->
 

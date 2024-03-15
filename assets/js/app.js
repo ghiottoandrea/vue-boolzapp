@@ -199,16 +199,16 @@ createApp({
             this.contacts[this.contactPosition].messages.push(newElement)
         },
         searchName() {
-            this.searchContact = this.searchContact.toLowerCase(); // Nome da cercare
-        
             this.contacts.forEach(contact => {
-                const userName = contact.name.toLowerCase(); // Ottieni il nome dell'utente corrente
-                if (userName.includes(this.searchContact)) {
-                    contact.visible = true; // Imposta visibile a true se il nome corrisponde
+                const searchContactLower = this.searchContact.toLowerCase()
+                const userName = contact.name.toLowerCase(); 
+                if (userName.includes(searchContactLower)) {
+                    contact.visible = true; 
                 } else {
-                    contact.visible = false; // Altrimenti, imposta visibile a false
+                    contact.visible = false;
                 }
             });
+            //console.log(this.contacts)
         }
         
     }
